@@ -1,4 +1,5 @@
 from django.http import HttpResponse 
+from django.shortcuts import render
 from django.views.generic import TemplateView
 
 # Create your views here.
@@ -13,10 +14,6 @@ from django.views.generic import TemplateView
 
 #     return HttpResponse(msg) 
 
-def contactView(requeat):
-    msg = 'this is the contact page'
-
-    return  HttpResponse(msg)
 
 def cartView(requeat):
     msg = 'this is the cart page'
@@ -24,11 +21,14 @@ def cartView(requeat):
     return  HttpResponse(msg)
 
 class HomeView(TemplateView):
-    template = 'index.html'
+    template_name = 'index.html'
+
+# class AboutView(TemplateView):
+#     template_name = 'about.html'
+
+class ContactView(TemplateView): #P
+    template_name = 'contact.html' #SNAKE CASE
+
 
 def aboutView(request):
-
-    msg = 'this is the about section of the website'
-
-
-    return  HttpResponse(msg)
+    return render(request, 'about.html')

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %} 
+        
+        {% endblock title %}
+    </title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'about' %}">About</a>
+        |
+        <a href="{% url 'contact' %}">contact</a>
+        this is nav
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock content %}  
+
+    </main>
+    <footer>
+        this is footer
+    </footer>
+</body>
+</html>

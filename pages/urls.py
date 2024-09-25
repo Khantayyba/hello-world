@@ -1,10 +1,10 @@
 from django.urls import path
 
-from pages.views import HomeView, aboutView, contactView, cartView 
+from pages.views import HomeView, aboutView, ContactView, cartView 
 
 urlpatterns = [
-     path('home/', HomeView.as_view()),
-     path('about/', aboutView),
-     path('contact/', contactView),
-     path('cart/', cartView),
+     path('', HomeView.as_view()), # class view/ methods attributes
+     path('about/', aboutView, name='about'),
+     path('contact/', ContactView.as_view(), name='contact'),
+     path('cart/', cartView),# function based view
 ]
